@@ -43,10 +43,13 @@ const Hits = () => {
       {hits.map((hit) => (
         <div key={hit.objectID} className={styles.hit}>
           <Image src={hit.image_url} width={150} height={150} alt="" />
-          <div>
+          <div className={styles.details}>
             <h2 className={styles.name}>
               {hit.name} - {hit.food_type}
             </h2>
+            <p className={styles.address}>
+              {hit.city} {hit.state}, {hit.postal_code}
+            </p>
             <Rating rating={hit.rounded_stars_count} />
             <PriceDisplay price={hit.price} />
           </div>

@@ -7,4 +7,7 @@ export type Hit = {
   rounded_stars_count: number;
   price: number;
   food_type: string;
+  city: string;
+  state: string;
+  postal_code: string;
 };

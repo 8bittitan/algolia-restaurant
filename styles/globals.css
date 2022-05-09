@@ -82,6 +82,7 @@ select {
   --grey-light: #eee;
   --grey-neutral: #ccc;
   --grey-dark: #999;
+  --grey-darker: #707070;
   --green-neutral: #118c4f;
   --red-neutral: #f32013;
 }

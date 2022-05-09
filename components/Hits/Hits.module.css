@@ -1,19 +1,14 @@
 .hit {
   display: flex;
   width: 100%;
-}
-
-.hit > * + * {
-  margin-left: 1rem;
-}
-
-.hit:not(:last-of-type) {
-  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .name {
   font-size: 1.25em;
   max-width: 250px;
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
 }
 
 @media screen and (min-width: 890px) {
@@ -21,6 +16,20 @@
     font-size: 1.5rem;
     max-width: 100%;
   }
+}
+
+.details {
+  margin-left: 1rem;
+}
+
+.address {
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--grey-darker);
+}
+
+.hit:not(:last-of-type) {
+  margin-bottom: 1rem;
 }
 
 .delete {
