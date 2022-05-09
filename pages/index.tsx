@@ -7,9 +7,14 @@ import {
 } from "react-instantsearch-hooks-web";
 import { history } from "instantsearch.js/es/lib/routers/index.js";
 import { getServerState } from "react-instantsearch-hooks-server";
+import Head from "next/head";
 
 import createSearchClient from "@/utils/algolia";
-import { ALGOLIA_API_KEY, ALGOLIA_INDEX_NAME } from "@/utils/constants";
+import {
+  ALGOLIA_API_KEY,
+  ALGOLIA_APP_ID,
+  ALGOLIA_INDEX_NAME,
+} from "@/utils/constants";
 
 import Hits from "@/components/Hits";
 import Header from "@/components/Header";
@@ -32,21 +37,30 @@ const Home: NextPage<{
     });
 
   return (
-    <InstantSearchSSRProvider {...serverState}>
-      <InstantSearch
-        searchClient={searchClient}
-        indexName={ALGOLIA_INDEX_NAME}
-        routing={{
-          router: handleRouting(),
-        }}
-      >
-        <Configure hitsPerPage={10} />
-        <Header />
-        <main>
-          <Hits />
-        </main>
-      </InstantSearch>
-    </InstantSearchSSRProvider>
+    <>
+      <Head>
+        <link
+          crossOrigin="anonymous"
+          href={`https://${ALGOLIA_APP_ID}-dsn.algolia.net`}
+          rel="preconnect"
+        />
+      </Head>
+      <InstantSearchSSRProvider {...serverState}>
+        <InstantSearch
+          searchClient={searchClient}
+          indexName={ALGOLIA_INDEX_NAME}
+          routing={{
+            router: handleRouting(),
+          }}
+        >
+          <Configure hitsPerPage={10} />
+          <Header />
+          <main>
+            <Hits />
+          </main>
+        </InstantSearch>
+      </InstantSearchSSRProvider>
+    </>
   );
 };
 

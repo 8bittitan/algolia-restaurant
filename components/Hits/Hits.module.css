@@ -61,3 +61,37 @@
   border: 0;
   cursor: pointer;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 890px) {
+  .loading {
+    margin-top: 5rem;
+  }
+}
+
+.loading svg {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.loading span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
