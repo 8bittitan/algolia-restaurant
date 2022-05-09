@@ -11,5 +11,10 @@ export function useSearch() {
     []
   );
 
-  return { performSearch, clearSearch: clear, hasSearched: query !== "" };
+  return {
+    performSearch,
+    clearSearch: clear,
+    query,
+    hasSearched: query !== "",
+  };
 }

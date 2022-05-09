@@ -36,7 +36,7 @@ const CLEAR_ICON = (
 );
 
 const Search = () => {
-  const { performSearch, clearSearch, hasSearched } = useSearch();
+  const { performSearch, clearSearch, hasSearched, query } = useSearch();
 
   return (
     <div className={styles.container}>
@@ -46,6 +46,7 @@ const Search = () => {
           className={styles.input}
           name="search"
           placeholder="Search for a restaurant"
+          defaultValue={query}
           onChange={(e) => performSearch(e.target.value)}
         />
         {hasSearched && (
