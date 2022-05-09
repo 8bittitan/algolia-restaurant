@@ -9,7 +9,7 @@ import { history } from "instantsearch.js/es/lib/routers/index.js";
 import { getServerState } from "react-instantsearch-hooks-server";
 
 import createSearchClient from "@/utils/algolia";
-import { ALGOLIA_API_KEY } from "@/utils/constants";
+import { ALGOLIA_API_KEY, ALGOLIA_INDEX_NAME } from "@/utils/constants";
 
 import Hits from "@/components/Hits";
 import Header from "@/components/Header";
@@ -24,7 +24,7 @@ const Home: NextPage<{
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
         searchClient={searchClient}
-        indexName="dev_restaurants"
+        indexName={ALGOLIA_INDEX_NAME}
         routing={{
           router: history({
             getLocation() {
