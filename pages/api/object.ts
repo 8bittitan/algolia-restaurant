@@ -1,8 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import type { SearchClient } from "algoliasearch";
 import { ALGOLIA_ADMIN_API_KEY } from "@/utils/constants";
 import createSearchClient from "@/utils/algolia";
 
-const searchClient = createSearchClient(ALGOLIA_ADMIN_API_KEY);
+const searchClient = createSearchClient(
+  ALGOLIA_ADMIN_API_KEY,
+  true
+) as SearchClient;
 
 const index = searchClient.initIndex("dev_restaurants");
 
