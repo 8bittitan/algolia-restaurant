@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "algoliasearch": "^4.13.0",
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-instantsearch-hooks-web": "^6.24.2"
   },
   "devDependencies": {
     "@types/node": "17.0.31",
