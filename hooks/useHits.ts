@@ -1,8 +1,10 @@
 import { Hit } from "@types";
+import { useMemo, useState } from "react";
 import { useInfiniteHits } from "react-instantsearch-hooks-web";
 
 export function useHitsApi() {
   const { hits, isLastPage, showMore } = useInfiniteHits<Hit>();
+  const [removedHits, setRemovedHits] = useState<string[]>([]);
 
   const removeHit = async (objectId: string) => {
     const res = await fetch("/api/object", {
@@ -16,8 +18,12 @@ export function useHitsApi() {
       return;
     }
 
-    // TODO: Remove hit from list
+    setRemovedHits([...removedHits, objectId]);
   };
 
-  return { hits, removeHit, isLastPage, showMore };
+  const filteredHits = useMemo(() => {
+    return hits.filter((hit) => !removedHits.includes(hit.objectID));
+  }, [removedHits, hits]);
+
+  return { hits: filteredHits, removeHit, isLastPage, showMore };
 }
