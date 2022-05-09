@@ -1,0 +1,54 @@
+.hit {
+  display: flex;
+  width: 100%;
+}
+
+.hit > * + * {
+  margin-left: 1rem;
+}
+
+.hit:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: 1.25em;
+  max-width: 250px;
+}
+
+@media screen and (min-width: 890px) {
+  .name {
+    font-size: 1.5rem;
+    max-width: 100%;
+  }
+}
+
+.delete {
+  padding: 0;
+  margin-left: auto;
+  height: 1.25rem;
+  width: 1.25rem;
+  display: inline-flex;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: var(--red-neutral);
+}
+
+.delete svg {
+  height: 1.25rem;
+  width: 1.25em;
+}
+
+.more {
+  display: flex;
+  margin: 1rem auto;
+  background-color: var(--purple-neutral);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}

@@ -1,0 +1,41 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--grey-neutral);
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+.input {
+  width: 100%;
+  font-size: 1rem;
+  border: 0;
+  outline: 0;
+}
+
+.searchIcon {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.clear {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-dark);
+}
+
+.searchIcon,
+.clear svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}

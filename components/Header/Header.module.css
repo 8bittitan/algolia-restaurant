@@ -1,0 +1,11 @@
+.header {
+  background-color: var(--grey-light);
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 890px) {
+  .header {
+    padding: 5rem 10rem;
+  }
+}

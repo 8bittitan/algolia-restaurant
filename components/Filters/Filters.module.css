@@ -1,0 +1,52 @@
+.filtersToggle {
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid var(--grey-neutral);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtersToggle svg {
+  color: var(--text-neutral);
+  height: 0.9rem;
+  width: 0.9rem;
+  margin-left: 0.25rem;
+}
+
+.filterList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.filter {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--grey-neutral);
+  border-radius: 3px;
+  background-color: #fafafa;
+  color: var(--text-neutral);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  will-change: background-color, color;
+}
+
+.active {
+  background-color: var(--purple-neutral);
+  color: #fff;
+  border-color: transparent;
+}
+
+@media screen and (min-width: 890px) {
+  .filter {
+    width: auto;
+  }
+}

@@ -1,0 +1,16 @@
+.rating {
+  display: flex;
+  color: var(--purple-neutral);
+}
+
+.rating svg {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+@media screen and (min-width: 890px) {
+  .rating svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
