@@ -20,21 +20,24 @@ const Home: NextPage<{
   url: string;
   serverState?: InstantSearchServerState;
 }> = ({ url, serverState }) => {
+  const handleRouting = () =>
+    history({
+      getLocation() {
+        if (typeof window === "undefined") {
+          return new URL(url!) as unknown as Location;
+        }
+
+        return window.location;
+      },
+    });
+
   return (
     <InstantSearchSSRProvider {...serverState}>
       <InstantSearch
         searchClient={searchClient}
         indexName={ALGOLIA_INDEX_NAME}
         routing={{
-          router: history({
-            getLocation() {
-              if (typeof window === "undefined") {
-                return new URL(url!) as unknown as Location;
-              }
-
-              return window.location;
-            },
-          }),
+          router: handleRouting(),
         }}
       >
         <Configure hitsPerPage={10} />
