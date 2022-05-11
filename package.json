@@ -17,7 +17,8 @@
     "react-dom": "^17.0.2",
     "react-instantsearch-hooks": "6.24.2",
     "react-instantsearch-hooks-server": "6.24.2",
-    "react-instantsearch-hooks-web": "6.24.2"
+    "react-instantsearch-hooks-web": "6.24.2",
+    "ulid": "^2.3.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",

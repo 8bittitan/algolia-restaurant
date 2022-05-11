@@ -52,14 +52,6 @@
 .more {
   display: flex;
   margin: 1rem auto;
-  background-color: var(--purple-neutral);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: 0;
-  cursor: pointer;
 }
 
 .loading {

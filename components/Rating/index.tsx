@@ -32,7 +32,7 @@ const FILLED_STAR = (
 
 const BASE_RATING = 5;
 
-const Rating = ({ rating }: { rating: number }) => {
+const Rating = ({ rating = 0 }: { rating: number }) => {
   const leftover = BASE_RATING - rating;
 
   const filledStars = [...Array(rating)].map((_, index) => (

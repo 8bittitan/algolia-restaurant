@@ -8,6 +8,7 @@ import {
 import { history } from "instantsearch.js/es/lib/routers/index.js";
 import { getServerState } from "react-instantsearch-hooks-server";
 import Head from "next/head";
+import Link from "next/link";
 
 import createSearchClient from "@/utils/algolia";
 import {
@@ -59,15 +60,24 @@ const Home: NextPage<{
             <Hits />
           </main>
         </InstantSearch>
+
+        <Link href="/new">
+          <a className="addButton">Add restaurant</a>
+        </Link>
       </InstantSearchSSRProvider>
     </>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const protocol = req.headers.referer?.split("://")[0] || "https";
   const url = `${protocol}://${req.headers.host}${req.url}`;
   const serverState = await getServerState(<Home url={url} />);
+
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
 
   return {
     props: {
