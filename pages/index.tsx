@@ -62,7 +62,7 @@ const Home: NextPage<{
         </InstantSearch>
 
         <Link href="/new">
-          <a className="addButton">Add restaurant</a>
+          <a className="addButton desktop">Add restaurant</a>
         </Link>
       </InstantSearchSSRProvider>
     </>

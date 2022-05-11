@@ -101,6 +101,59 @@ body {
   margin-bottom: 1rem;
 }
 
+.addButton {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+@media screen and (min-width: 890px) {
+  .addButton {
+    right: 2.5rem;
+    bottom: 2.5rem;
+  }
+}
+
+.addObjectForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 890px) {
+  .addObjectForm {
+    padding: 0;
+  }
+}
+
+.addObjectForm > * + * {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 890px) {
+  .addObjectForm > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.addButton,
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple-neutral);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .desktop {
   display: none;
 }
@@ -122,51 +175,4 @@ body {
   body {
     font-size: 16px;
   }
-}
-
-.addButton {
-  position: fixed;
-  right: 2.5rem;
-  bottom: 2.5rem;
-}
-
-.addObjectForm {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.addObjectForm > * + * {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.addButton,
-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--purple-neutral);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: 0;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-
-label + input {
-  border: 1px solid var(--grey-darker);
-  border-radius: 0.25rem;
-  font-size: 1.1rem;
-  padding: 0.25rem 0.5rem;
 }

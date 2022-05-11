@@ -3,11 +3,17 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-bottom: 1rem;
   padding: 1rem;
   border: 1px solid var(--grey-neutral);
   border-radius: 0.25rem;
   background-color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 890px) {
+  .search {
+    margin-bottom: 1rem;
+  }
 }
 
 .input {

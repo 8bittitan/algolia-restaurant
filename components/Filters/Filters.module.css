@@ -8,10 +8,11 @@
   font-size: 0.9rem;
   justify-content: center;
   align-items: center;
+  color: var(--text-neutral);
+  margin-top: 1rem;
 }
 
 .filtersToggle svg {
-  color: var(--text-neutral);
   height: 0.9rem;
   width: 0.9rem;
   margin-left: 0.25rem;
