@@ -1,6 +1,6 @@
-type Callback = (...args: string[]) => void;
+import { FN } from "@types";
 
-const debounce = (func: Callback) => {
+const debounce = (func: FN<string>) => {
   let timeout: NodeJS.Timeout | null;
   return (...args: string[]) => {
     if (timeout) {

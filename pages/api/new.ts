@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import type { SearchClient } from "algoliasearch";
 import { ulid } from "ulid";
 
-import { ALGOLIA_ADMIN_API_KEY } from "@/utils/constants";
+import { ALGOLIA_ADMIN_API_KEY, ALGOLIA_INDEX_NAME } from "@/utils/constants";
 import createSearchClient from "@/utils/algolia";
 
 const searchClient = createSearchClient(
@@ -10,7 +10,7 @@ const searchClient = createSearchClient(
   true
 ) as SearchClient;
 
-const index = searchClient.initIndex("dev_restaurants");
+const index = searchClient.initIndex(ALGOLIA_INDEX_NAME);
 
 export default async function handler(
   req: NextApiRequest,

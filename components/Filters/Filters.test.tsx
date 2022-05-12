@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { noop } from "@types";
+import { FN } from "@types";
 
 import Filters from "./";
 
-let refine: noop | null = null;
+let refine: FN<string> | null = null;
 
 vi.mock("react-instantsearch-hooks-web", () => ({
   useRefinementList() {

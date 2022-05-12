@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Hits from "./";
-import { noop } from "@types";
+import { FN } from "@types";
 
 vi.mock("react-instantsearch-hooks-web", () => ({
   useSearchBox() {
@@ -12,8 +12,8 @@ vi.mock("react-instantsearch-hooks-web", () => ({
   },
 }));
 
-let removeHit: noop | null = null;
-let showMore: noop | null = null;
+let removeHit: FN<string> | null = null;
+let showMore: FN<unknown> | null = null;
 
 let isLastPage = false;
 

@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { noop } from "@types";
+import { FN } from "@types";
 
 import Search from "./";
 
-let performSearch: noop | null = null;
-let clearSearch: noop | null = null;
+let performSearch: FN<string> | null = null;
+let clearSearch: FN<unknown> | null = null;
 let hasSearched = false;
 
 vi.mock("@/hooks/useSearch", () => ({

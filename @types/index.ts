@@ -1,4 +1,4 @@
-export type noop = (...agrs: any) => void;
+export type FN<T> = (...agrs: T[]) => void;
 
 export type Hit = {
   objectID: string;
